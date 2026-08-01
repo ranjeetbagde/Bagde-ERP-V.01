@@ -1,0 +1,51 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block direct web access to application internals and installer
+    RewriteRule ^(?:app|config|database|storage|vendor|install)(?:/|$) - [F,L]
+
+    # Company logo may be public; all other uploads require auth download route
+    RewriteRule ^uploads/company/(.*)$ public/uploads/company/$1 [L]
+    RewriteRule ^uploads(?:/|$) - [F,L]
+    RewriteRule ^public/uploads(?!/company/)(?:/|$) - [F,L]
+
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # Front controller — skip real files/directories (Apache + LiteSpeed)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# LiteSpeed Web Server (uses same rewrite syntax when .htaccess is enabled)
+<IfModule LiteSpeed>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteRule ^(?:app|config|database|storage|vendor|install)(?:/|$) - [F,L]
+    RewriteRule ^uploads/company/(.*)$ public/uploads/company/$1 [L]
+    RewriteRule ^uploads(?:/|$) - [F,L]
+    RewriteRule ^public/uploads(?!/company/)(?:/|$) - [F,L]
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# Protect config files
+<FilesMatch "\.(env|lock|sql)$">
+    Require all denied
+</FilesMatch>

@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Root install (public_html/) — use this .htaccess when NOT in a subfolder.
+# Rename to .htaccess and comment out RewriteBase or set: RewriteBase /
+
+RewriteBase /
+
+RewriteRule ^(app|config|database|storage|vendor)/ - [F,L]
+RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+RewriteRule ^uploads/(.*)$ public/uploads/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+Options -Indexes
+
+<FilesMatch "\.(env|lock|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

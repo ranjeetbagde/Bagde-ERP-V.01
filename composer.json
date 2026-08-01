@@ -1,0 +1,13 @@
+{
+    "name": "bagde/erp",
+    "description": "Bagde ERP - Building Material & Transport Management System",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "dompdf/dompdf": "^2.0",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

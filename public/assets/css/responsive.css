@@ -1,0 +1,122 @@
+/**
+ * Bagde ERP — Responsive
+ */
+@media (max-width: 1200px) {
+    .page-content { padding: 20px; }
+    .search-box input { width: 180px; }
+    .search-box input:focus { width: 220px; }
+}
+
+@media (max-width: 992px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.show { transform: translateX(0); }
+    .main-content { margin-left: 0 !important; }
+    .quick-actions { display: block; }
+    .page-content { padding-bottom: 88px; }
+    .navbar-date { display: none; }
+    .search-box { display: none; }
+    .btn-quick-create span { display: none; }
+}
+
+@media (max-width: 768px) {
+    .page-content { padding: 16px; }
+    .top-navbar { padding: 0 16px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .data-table-toolbar { flex-direction: column; align-items: stretch; }
+    .filter-panel { flex-direction: column; }
+    .hero-card__grid { grid-template-columns: repeat(2, 1fr); }
+    .progress-hero__stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .stat-card { flex-direction: row; }
+    .page-header { flex-direction: column; }
+    .user-info { display: none !important; }
+    .quick-bar { flex-direction: column; }
+    .quick-bar__btn { width: 100%; justify-content: center; }
+}
+
+@media print {
+    .sidebar, .top-navbar, .quick-actions, .no-print, .toast-container { display: none !important; }
+    .main-content { margin-left: 0 !important; }
+    .page-content { padding: 0; max-width: none; }
+}
+
+.quick-actions {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 8px 4px;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
+}
+
+.quick-actions-inner { display: flex; justify-content: space-around; }
+
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 4px 6px;
+}
+
+.quick-action-btn i { font-size: 1.25rem; color: var(--primary); }
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, #1a4480 100%);
+    padding: 24px;
+}
+
+.login-shell {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 40px 36px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+}
+
+.login-logo { text-align: center; margin-bottom: 28px; }
+
+.login-brand-logo {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.login-tagline { color: var(--text-muted); font-size: 0.875rem; margin: 0; }
+
+.erp-login-footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8125rem;
+}
+
+.erp-login-footer p { margin: 0 0 4px; }
+.erp-login-footer__version { font-weight: 600; }
+.erp-login-footer__credit { opacity: 0.9; }

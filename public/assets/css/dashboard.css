@@ -1,0 +1,30 @@
+/**
+ * Bagde ERP — Dashboard Specific
+ */
+.dashboard-greeting {
+    margin-bottom: 4px;
+}
+
+.dashboard-kpi-section {
+    margin-bottom: 8px;
+}
+
+.dashboard-charts-row {
+    margin-top: 8px;
+}
+
+.dashboard-widget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.chart-widget canvas { max-height: 260px; }
+
+.dashboard-alert-card {
+    border-left: 4px solid var(--danger);
+}
+
+.dashboard-alert-card.warning {
+    border-left-color: var(--brand-orange);
+}

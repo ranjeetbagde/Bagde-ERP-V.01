@@ -1,0 +1,91 @@
+/**
+ * Bagde ERP — App Layout
+ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-body);
+    color: var(--text-primary);
+    margin: 0;
+    min-height: 100vh;
+    transition: var(--transition);
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+a { color: var(--primary-light); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--primary); }
+
+.app-wrapper { display: flex; min-height: 100vh; }
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    transition: var(--transition);
+    min-height: 100vh;
+    min-width: 0;
+}
+
+.sidebar.collapsed ~ .main-content { margin-left: var(--sidebar-collapsed); }
+
+.page-content {
+    padding: 24px 28px;
+    max-width: 1600px;
+}
+
+.page-content > *:last-child { margin-bottom: 0; }
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+}
+
+.sidebar-overlay.show { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.35s ease; }
+
+@keyframes slideIn {
+    from { transform: translateX(-12px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in { animation: slideIn 0.3s ease; }
+
+/* Developer branding footers */
+.erp-app-footer {
+    padding: 12px 28px 20px;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color, #e5e7eb);
+    background: var(--bg-body);
+}
+
+.erp-app-footer__version {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--primary-light);
+    font-size: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.erp-app-footer__version:hover { color: var(--primary); text-decoration: underline; }
+
+.erp-app-footer__sep { margin: 0 6px; opacity: 0.5; }
+
+.erp-about-list dt { font-weight: 500; color: var(--text-muted); }
+.erp-about-list dd { margin-bottom: 0.75rem; }
+.erp-about-list dd:last-child { margin-bottom: 0; }

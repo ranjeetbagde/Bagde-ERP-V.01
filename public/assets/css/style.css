@@ -1,0 +1,16 @@
+/**
+ * Bagde ERP — Main Stylesheet Entry
+ * Modular design system — import order matters
+ */
+@import url('variables.css');
+@import url('layout.css');
+@import url('sidebar.css');
+@import url('navbar.css');
+@import url('cards.css');
+@import url('tables.css');
+@import url('forms.css');
+@import url('utilities.css');
+@import url('components.css');
+@import url('dashboard.css');
+@import url('responsive.css');
+@import url('dark-mode.css');

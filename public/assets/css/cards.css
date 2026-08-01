@@ -1,0 +1,164 @@
+/**
+ * Bagde ERP — Cards & Stat Widgets
+ */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card:hover { box-shadow: var(--shadow-sm); }
+
+.card-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--bg-card);
+}
+
+.card-header h5 {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.card-body { padding: 20px; }
+
+.form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-xs);
+}
+
+.form-card .card-header {
+    background: linear-gradient(180deg, var(--gray-50), var(--bg-card));
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.stat-icon.blue { background: var(--primary-50); color: var(--primary); }
+.stat-icon.orange { background: var(--accent-50); color: var(--brand-orange); }
+.stat-icon.green { background: var(--success-50); color: var(--success); }
+.stat-icon.red { background: var(--danger-50); color: var(--danger); }
+.stat-icon.purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.stat-info p {
+    margin: 4px 0 0;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.report-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    height: 100%;
+    transition: var(--transition);
+    display: block;
+    color: inherit;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+    color: inherit;
+}
+
+.report-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--primary-50);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    margin-bottom: 14px;
+}
+
+.report-card__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.report-card__desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.widget-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-xs);
+    overflow: hidden;
+}
+
+.widget-panel__header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.widget-panel__body { padding: 0; }
+
+.widget-list-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.15s;
+}
+
+.widget-list-item:last-child { border-bottom: none; }
+.widget-list-item:hover { background: var(--primary-50); }

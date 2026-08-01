@@ -1,0 +1,130 @@
+/**
+ * Bagde ERP — Forms
+ */
+.form-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: var(--transition);
+    min-height: 42px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: var(--focus-ring);
+    outline: none;
+}
+
+.form-control-sm,
+.form-select-sm {
+    min-height: 36px;
+    padding: 6px 12px;
+    font-size: 0.8125rem;
+}
+
+.form-section { margin-bottom: 28px; }
+
+.form-section-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-section-title i { color: var(--brand-orange); }
+
+.form-helper {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.form-floating-pro { position: relative; margin-bottom: 1rem; }
+
+.form-floating-pro input,
+.form-floating-pro select,
+.form-floating-pro textarea {
+    width: 100%;
+    padding: 18px 14px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    background: var(--bg-card);
+    transition: var(--transition);
+}
+
+.form-floating-pro label {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: var(--transition);
+    background: var(--bg-card);
+    padding: 0 4px;
+}
+
+.form-floating-pro input:focus,
+.form-floating-pro input:not(:placeholder-shown),
+.form-floating-pro select:focus,
+.form-floating-pro textarea:focus,
+.form-floating-pro textarea:not(:placeholder-shown) {
+    border-color: var(--primary);
+    box-shadow: var(--focus-ring);
+}
+
+.form-floating-pro input:focus + label,
+.form-floating-pro input:not(:placeholder-shown) + label,
+.form-floating-pro select:focus + label,
+.form-floating-pro textarea:focus + label,
+.form-floating-pro textarea:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.form-floating-pro.is-invalid input { border-color: var(--danger); }
+.form-floating-pro.is-valid input { border-color: var(--success); }
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 8px;
+}
+
+.input-group-text {
+    background: var(--gray-50);
+    border-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+.progress-hero__fill {
+    background: linear-gradient(90deg, var(--primary), var(--brand-orange)) !important;
+}
